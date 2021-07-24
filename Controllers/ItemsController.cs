@@ -38,5 +38,55 @@ namespace dotnet_5_rest_api_flash.Controllers
 
          return Ok(item.AsDto());
       }
+
+      [HttpPost]
+      public ActionResult<ItemDto> CreateItem(CreateItemDto itemDto)
+      {
+         Item item = new()
+         {
+            Id = Guid.NewGuid(),
+            Name = itemDto.Name,
+            Price = itemDto.Price,
+            CreatedDate = DateTimeOffset.UtcNow
+         };
+         repository.CreateItem(item);
+         return CreatedAtAction(nameof(GetItem), new { Id = item.Id }, item.AsDto());
+      }
+
+      [HttpPut("{id}")]
+      public ActionResult UpdateItem(Guid id, UpdateItemDto itemDtio)
+      {
+         var existingItem = repository.GetItem(id);
+
+         if (existingItem is null)
+         {
+            return NotFound();
+         }
+
+         Item updatedItem = existingItem with
+         {
+            Name = itemDtio.Name,
+            Price = itemDtio.Price
+         };
+
+         repository.UpdateItem(updatedItem);
+
+         return NoContent();
+      }
+
+      [HttpDelete("{id}")]
+      public ActionResult DeleteItem(Guid id)
+      {
+         var existingItem = repository.GetItem(id);
+
+         if (existingItem is null)
+         {
+            return NotFound();
+         }
+
+         repository.DeleteItem(id);
+
+         return NoContent();
+      }
    }
 }

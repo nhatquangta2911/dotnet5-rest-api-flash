@@ -10,7 +10,7 @@ namespace dotnet_5_rest_api_flash
          return new ItemDto
          {
             ItemId = item.Id,
-            ItemName = "[ITEM]" + item.Name,
+            ItemName = "[ITEM] " + item.Name,
             ItemPrice = item.Price,
             ItemCreatedDate = item.CreatedDate
          };
