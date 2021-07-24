@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using dotnet_5_rest_api_flash.Entities;
+using dotnet_5_rest_api_flash.Interfaces;
 
 namespace dotnet_5_rest_api_flash.Repositories
 {
-   public class InMemoryItemsRepository
+   public class InMemoryItemsRepository : IItemsRepository
    {
       private readonly List<Item> items = new()
       {
