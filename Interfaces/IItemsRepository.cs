@@ -8,5 +8,8 @@ namespace dotnet_5_rest_api_flash.Interfaces
    {
       Item GetItem(Guid id);
       IEnumerable<Item> GetItems();
+      void CreateItem(Item item);
+      void UpdateItem(Item item);
+      void DeleteItem(Guid id);
    }
 }
