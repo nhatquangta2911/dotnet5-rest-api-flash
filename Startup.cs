@@ -43,7 +43,10 @@ namespace dotnet_5_rest_api_flash
          });
          services.AddSingleton<IItemsRepository, MongoDbItemsRepository>();
 
-         services.AddControllers();
+         services.AddControllers(options =>
+         {
+            options.SuppressAsyncSuffixInActionNames = false;
+         });
          services.AddSwaggerGen(c =>
          {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "dotnet_5_rest_api_flash", Version = "v1" });

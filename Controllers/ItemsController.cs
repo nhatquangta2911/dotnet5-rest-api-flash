@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using dotnet_5_rest_api_flash.Constants;
 using dotnet_5_rest_api_flash.Dtos;
 using dotnet_5_rest_api_flash.Entities;
 using dotnet_5_rest_api_flash.Interfaces;
@@ -9,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace dotnet_5_rest_api_flash.Controllers
 {
    [ApiController]
-   [Route("items")]
+   [Route(RouteConstants.Items)]
    public class ItemsController : ControllerBase
    {
       private readonly IItemsRepository repository;
@@ -20,16 +22,16 @@ namespace dotnet_5_rest_api_flash.Controllers
       }
 
       [HttpGet]
-      public IEnumerable<ItemDto> GetItems()
+      public async Task<IEnumerable<ItemDto>> GetItemsAsync()
       {
-         var items = repository.GetItems().Select(item => item.AsDto());
+         var items = (await repository.GetItemsAsync()).Select(item => item.AsDto());
          return items;
       }
 
       [HttpGet("{id}")]
-      public ActionResult<ItemDto> GetItem(Guid id)
+      public async Task<ActionResult<ItemDto>> GetItemAsync(Guid id)
       {
-         var item = repository.GetItem(id);
+         var item = await repository.GetItemAsync(id);
 
          if (item is null)
          {
@@ -40,7 +42,7 @@ namespace dotnet_5_rest_api_flash.Controllers
       }
 
       [HttpPost]
-      public ActionResult<ItemDto> CreateItem(CreateItemDto itemDto)
+      public async Task<ActionResult<ItemDto>> CreateItemAsync(CreateItemDto itemDto)
       {
          Item item = new()
          {
@@ -49,14 +51,14 @@ namespace dotnet_5_rest_api_flash.Controllers
             Price = itemDto.Price,
             CreatedDate = DateTimeOffset.UtcNow
          };
-         repository.CreateItem(item);
-         return CreatedAtAction(nameof(GetItem), new { Id = item.Id }, item.AsDto());
+         await repository.CreateItemAsync(item);
+         return CreatedAtAction(nameof(GetItemAsync), new { Id = item.Id }, item.AsDto());
       }
 
       [HttpPut("{id}")]
-      public ActionResult UpdateItem(Guid id, UpdateItemDto itemDtio)
+      public async Task<ActionResult> UpdateItem(Guid id, UpdateItemDto itemDtio)
       {
-         var existingItem = repository.GetItem(id);
+         var existingItem = await repository.GetItemAsync(id);
 
          if (existingItem is null)
          {
@@ -69,22 +71,22 @@ namespace dotnet_5_rest_api_flash.Controllers
             Price = itemDtio.Price
          };
 
-         repository.UpdateItem(updatedItem);
+         await repository.UpdateItemAsync(updatedItem);
 
          return NoContent();
       }
 
       [HttpDelete("{id}")]
-      public ActionResult DeleteItem(Guid id)
+      public async Task<ActionResult> DeleteItem(Guid id)
       {
-         var existingItem = repository.GetItem(id);
+         var existingItem = await repository.GetItemAsync(id);
 
          if (existingItem is null)
          {
             return NotFound();
          }
 
-         repository.DeleteItem(id);
+         await repository.DeleteItemAsync(id);
 
          return NoContent();
       }
