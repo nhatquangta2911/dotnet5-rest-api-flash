@@ -69,9 +69,8 @@ namespace dotnet_5_rest_api_flash
             app.UseDeveloperExceptionPage();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "dotnet_5_rest_api_flash v1"));
+            app.UseHttpsRedirection();
          }
-
-         app.UseHttpsRedirection();
 
          app.UseRouting();
 
