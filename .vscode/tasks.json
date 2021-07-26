@@ -41,6 +41,63 @@
             "/consoleloggerparameters:NoSummary"
          ],
          "problemMatcher": "$msCompile"
+      },
+      {
+         "type": "docker-build",
+         "label": "docker-build: debug",
+         "dependsOn": [
+            "build"
+         ],
+         "dockerBuild": {
+            "tag": "dotnet5restapiflash:dev",
+            "target": "base",
+            "dockerfile": "${workspaceFolder}/Dockerfile",
+            "context": "${workspaceFolder}",
+            "pull": true
+         },
+         "netCore": {
+            "appProject": "${workspaceFolder}/dotnet-5-rest-api-flash.csproj"
+         }
+      },
+      {
+         "type": "docker-build",
+         "label": "docker-build: release",
+         "dependsOn": [
+            "build"
+         ],
+         "dockerBuild": {
+            "tag": "dotnet5restapiflash:latest",
+            "dockerfile": "${workspaceFolder}/Dockerfile",
+            "context": "${workspaceFolder}",
+            "pull": true
+         },
+         "netCore": {
+            "appProject": "${workspaceFolder}/dotnet-5-rest-api-flash.csproj"
+         }
+      },
+      {
+         "type": "docker-run",
+         "label": "docker-run: debug",
+         "dependsOn": [
+            "docker-build: debug"
+         ],
+         "dockerRun": {},
+         "netCore": {
+            "appProject": "${workspaceFolder}/dotnet-5-rest-api-flash.csproj",
+            "enableDebugging": true,
+            "configureSsl": false
+         }
+      },
+      {
+         "type": "docker-run",
+         "label": "docker-run: release",
+         "dependsOn": [
+            "docker-build: release"
+         ],
+         "dockerRun": {},
+         "netCore": {
+            "appProject": "${workspaceFolder}/dotnet-5-rest-api-flash.csproj"
+         }
       }
    ]
 }
