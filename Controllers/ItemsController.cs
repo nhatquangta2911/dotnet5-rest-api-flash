@@ -7,6 +7,7 @@ using dotnet_5_rest_api_flash.Dtos;
 using dotnet_5_rest_api_flash.Entities;
 using dotnet_5_rest_api_flash.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace dotnet_5_rest_api_flash.Controllers
 {
@@ -15,16 +16,19 @@ namespace dotnet_5_rest_api_flash.Controllers
    public class ItemsController : ControllerBase
    {
       private readonly IItemsRepository repository;
+      private readonly ILogger<ItemsController> logger;
 
-      public ItemsController(IItemsRepository repository)
+      public ItemsController(IItemsRepository repository, ILogger<ItemsController> logger)
       {
          this.repository = repository;
+         this.logger = logger;
       }
 
       [HttpGet]
       public async Task<IEnumerable<ItemDto>> GetItemsAsync()
       {
          var items = (await repository.GetItemsAsync()).Select(item => item.AsDto());
+         logger.LogInformation($"{DateTime.UtcNow.ToString("hh:mm:ss")}: Retrieved {items.Count() }");
          return items;
       }
 
