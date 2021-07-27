@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Mp7CNli7rYAsMq4Ok3tg+YG4K7lifnKrs9GKwd/VCB8HCZRTS5J+dspl37bFby+MaW5Lrt8NcV2iWmuvDRJTFw==",
+  "success": true,
+  "projectFilePath": "/Users/shawn_ta/dotnet-5-rest-api-flash/build.proj",
+  "expectedPackageFiles": [
+    "/Users/shawn_ta/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.0/microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "/Users/shawn_ta/.nuget/packages/microsoft.netframework.referenceassemblies.net45/1.0.0/microsoft.netframework.referenceassemblies.net45.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

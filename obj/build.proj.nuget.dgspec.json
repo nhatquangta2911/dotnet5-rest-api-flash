@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/shawn_ta/dotnet-5-rest-api-flash/build.proj": {}
+  },
+  "projects": {
+    "/Users/shawn_ta/dotnet-5-rest-api-flash/build.proj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/shawn_ta/dotnet-5-rest-api-flash/build.proj",
+        "projectName": "build",
+        "projectPath": "/Users/shawn_ta/dotnet-5-rest-api-flash/build.proj",
+        "packagesPath": "/Users/shawn_ta/.nuget/packages/",
+        "outputPath": "/Users/shawn_ta/dotnet-5-rest-api-flash/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/shawn_ta/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
