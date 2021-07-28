@@ -111,6 +111,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.3, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.9.4, )"
@@ -120,6 +124,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.0.2, )"
+            },
+            "moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
             },
             "xunit": {
               "target": "Package",
