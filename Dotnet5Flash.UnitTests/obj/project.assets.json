@@ -7493,11 +7493,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/shawn_ta/dotnet-5-rest-api-flash/Dotnet5Flash.UnitTests/Dotnet5Flash.UnitTests.csproj",
+      "projectUniqueName": "/Users/shawn_ta/Project/dotnet-5-rest-api-flash/Dotnet5Flash.UnitTests/Dotnet5Flash.UnitTests.csproj",
       "projectName": "Dotnet5Flash.UnitTests",
-      "projectPath": "/Users/shawn_ta/dotnet-5-rest-api-flash/Dotnet5Flash.UnitTests/Dotnet5Flash.UnitTests.csproj",
+      "projectPath": "/Users/shawn_ta/Project/dotnet-5-rest-api-flash/Dotnet5Flash.UnitTests/Dotnet5Flash.UnitTests.csproj",
       "packagesPath": "/Users/shawn_ta/.nuget/packages/",
-      "outputPath": "/Users/shawn_ta/dotnet-5-rest-api-flash/Dotnet5Flash.UnitTests/obj/",
+      "outputPath": "/Users/shawn_ta/Project/dotnet-5-rest-api-flash/Dotnet5Flash.UnitTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/shawn_ta/.nuget/NuGet/NuGet.Config"
@@ -7512,8 +7512,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/shawn_ta/dotnet-5-rest-api-flash/Dotnet5Flash.Api/Dotnet5Flash.Api.csproj": {
-              "projectPath": "/Users/shawn_ta/dotnet-5-rest-api-flash/Dotnet5Flash.Api/Dotnet5Flash.Api.csproj"
+            "/Users/shawn_ta/Project/dotnet-5-rest-api-flash/Dotnet5Flash.Api/Dotnet5Flash.Api.csproj": {
+              "projectPath": "/Users/shawn_ta/Project/dotnet-5-rest-api-flash/Dotnet5Flash.Api/Dotnet5Flash.Api.csproj"
             }
           }
         }
@@ -7572,7 +7572,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
       }
     }
   }
