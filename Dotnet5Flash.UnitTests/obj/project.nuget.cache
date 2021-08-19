@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zW//sDJ50Myy3+EwIepxpmGJBBPAYb6/Q+B/u3bVaPWvzQ1qn4KjcQmDBWWy62jP3gLSlM9FxQjuB+CXE11/Rw==",
+  "dgSpecHash": "1uoiy/lA5lYqlbBN1obfmvfuPhiOR+L1ptpV9BOAEKhoC59fVgxzh+dX33oAUX/wQIj2FUxeBwoze2dXahgtVA==",
   "success": true,
-  "projectFilePath": "/Users/shawn_ta/dotnet-5-rest-api-flash/Dotnet5Flash.UnitTests/Dotnet5Flash.UnitTests.csproj",
+  "projectFilePath": "/Users/shawn_ta/Project/dotnet-5-rest-api-flash/Dotnet5Flash.UnitTests/Dotnet5Flash.UnitTests.csproj",
   "expectedPackageFiles": [
     "/Users/shawn_ta/.nuget/packages/aspnetcore.healthchecks.mongodb/5.0.1/aspnetcore.healthchecks.mongodb.5.0.1.nupkg.sha512",
     "/Users/shawn_ta/.nuget/packages/castle.core/4.4.0/castle.core.4.4.0.nupkg.sha512",
